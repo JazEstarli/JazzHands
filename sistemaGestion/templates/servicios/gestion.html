@@ -1,11 +1,12 @@
 {% include 'headerGestion.html' %}
-<span class="gestion">
+<div class="gestion">
 <h2>Gestión de Servicios</h2>
-
+<div class="boton-gestion">
 <a href="{{url_for('create')}}" class="btn btn-secondary">
 Ingresar nuevo servicio
 </a>
-</span>
+</div>
+</div>
 <div class="table-responsive tabla">
     <table class="table table-hover table-danger">
         <thead class="thg">
@@ -33,7 +34,7 @@ Ingresar nuevo servicio
                 <td>{{servicio[4]}}</td>
                 <td>{{servicio[5]}}</td>
                 <td>
-                    <a class="btn btn-secondary btn-sm" href="/edit/{{servicio[0]}}">Editar</a> |
+                    <a class="btn btn-secondary btn-sm" href="/edit/{{servicio[0]}}">Editar</a>
                     <a class="btn btn-secondary btn-sm" onclick="return confirm('¿Desea borrar el servicio?')" href="/destroy/{{servicio[0]}}">Eliminar</a>
                 </td>
 

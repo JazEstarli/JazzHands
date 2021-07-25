@@ -280,11 +280,63 @@ p {
     border-radius: 1em;
 }
 
+.tabla a {
+    margin-top: 1em;
+    border-color: rgba(193, 179, 179, 0.56);
+}
+
+.tabla td {
+    padding-top: 1em;
+}
+
+.tabla img{
+    border-style: solid;
+    border-radius: 1em;
+    border-color: rgba(193, 179, 179, 0.56);
+}
+
 .thg{
     font-size: larger;
 }
 
 .gestion{
-    margin:auto
-    width:auto
+    display: flex;
+    margin: 3em;
+}
+
+.gestion >*{
+    flex: 1 0 auto
+}
+
+.boton-gestion{
+    text-align: right;
+}
+
+/* Crear */
+
+.ing-servicio {
+    margin: 5em auto;
+    width: 100%;
+    text-align: center;
+}
+
+.form-servicio {
+    background-color: rgba(255, 255, 255, 0.56);
+    padding: 2em;
+    border-radius: 1em;
+    max-width: 600px;
+    margin-bottom: 5em;
+}
+
+.form-servicio input{
+    margin: 1em;
+    border-radius: 0.5em;
+    max-width: 600px;
+}
+
+.botones a,
+.botones input {
+    border-radius: 0.5em;
+    margin: 1em 2em 0em;
+    background-color: rgba(193, 179, 179, 0.56);
 }

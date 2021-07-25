@@ -1,51 +1,49 @@
 {% include 'headerGestion.html' %}
-<br>
+<div class="ing-servicio">
 <b-card-header>
     <h2>Ingresar nuevo servicio</h2>
 </b-card-header>
+</div>
 
+<div class="form-servicio">
 <form method="POST" action="/store" enctype="multipart/form-data">
-    <br>
     <div class="form-group">
         <label for="txtSpa">Spa:</label>
         <input id="txtSpa" class="formcontrol" type="radio" name="txtSpa" value="uñas"> Uñas
         <input id="txtSpa" class="formcontrol" type="radio" name="txtSpa" value="pestañas"> Pestañas
         <input id="txtSpa" class="formcontrol" type="radio" name="txtSpa" value="cejas"> Cejas
     </div>
-    <br>
+
     <div class="form-group">
         <label for="txtNombre">Servicio:</label>
         <input id="txtNombre" class="formcontrol" type="text" name="txtNombre" size=50 placeholder="Nombre del servicio de spa">
     </div>
-    <br>
-    <div class="form-group">
 
+    <div class="form-group">
         <label for="txtTiempo">Tiempo:</label>
         <input id="txtTiempo" class="formcontrol" type="text" name="txtTiempo" placeholder="Tiempo de realización">
 
     </div>
-    <br>
+
     <div class="form-group">
         <label for="txtDuracion">Duración:</label>
         <input id="txtDuracion" class="formcontrol" type="text" name="txtDuracion" size=30 placeholder="Tiempo para próximo servicio">
     </div>
 
-    <br>
     <div class="form-group">
         <label for="txtPrecio">Precio:</label>
         <input id="txtPrecio" class="formcontrol" type="text" name="txtPrecio" placeholder="Importe en $">
     </div>
-    <br>
+
     <div class="form-group">
         <label for="txtFoto">Foto:</label>
         <input id="txtFoto" class="formcontrol" type="file" name="txtFoto">
     </div>
-    <br>
-    <br>
-    <div class="form-group">
+
+    <div class="form-group botones">
         <input type="submit" class="btn btn-secondary btn-light btn-sm" value="Agregar" onclick="validarFormulario()">
         <a href="{{url_for('gestion')}}" class="btn btn-secondary btn-light btn-sm">Regresar</a>
     </div>
-    <br>
+</div>
 
     <br> {% include 'footer.html' %}

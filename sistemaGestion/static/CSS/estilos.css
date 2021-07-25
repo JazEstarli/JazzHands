@@ -246,8 +246,45 @@ p {
     text-align: left;
 }
 
+/* Login */
 
-/*
-.jazz {
-    transition: ;
-    }
+.contenedor-login {
+    display: flex;
+}
+
+.contenedor-login form {
+    margin: auto;
+    margin-top: 5em;
+    margin-bottom: 2em;
+    width: 400px;
+    text-align: center;
+}
+
+.contenedor-login .form-group {
+    text-align: left;
+    margin: 1em;
+}
+
+.btn-login {
+    margin: 5em auto;
+    margin-bottom: 10em;
+    border-radius: 0.5em;
+    font-weight: bolder;
+}
+
+/* Gestion */
+.tabla {
+    background-color: rgba(193, 179, 179, 0.56);
+    margin: 1em 0;
+    padding: 0.6em;
+    border-radius: 1em;
+}
+
+.thg{
+    font-size: larger;
+}
+
+.gestion{
+    margin:auto
+    width:auto
+}

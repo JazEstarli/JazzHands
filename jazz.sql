@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 19-07-2021 a las 04:36:46
--- Versión del servidor: 10.4.20-MariaDB
--- Versión de PHP: 7.3.29
+-- Tiempo de generación: 24-07-2021 a las 01:14:44
+-- Versión del servidor: 10.4.18-MariaDB
+-- Versión de PHP: 8.0.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -27,14 +27,14 @@ SET time_zone = "+00:00";
 -- Estructura de tabla para la tabla `servicios`
 --
 
-CREATE TABLE `jazz`.`servicios` (
-  `id` int(4) NOT NULL,
+CREATE TABLE `jazz` . `servicios` (
+  `id` int(10) NOT NULL,
   `spa` varchar(10) NOT NULL,
   `nombre` varchar(100) NOT NULL,
   `proceso` varchar(20) NOT NULL,
   `duracion` varchar(20) NOT NULL,
-  `precio` int(6) NOT NULL,
-  `foto` varchar(100) NOT NULL
+  `precio` decimal(6,2) NOT NULL,
+  `foto` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -42,22 +42,41 @@ CREATE TABLE `jazz`.`servicios` (
 --
 
 INSERT INTO `jazz`.`servicios` (`id`, `spa`, `nombre`, `proceso`, `duracion`, `precio`, `foto`) VALUES
-(0, '', '', '0', '', 0, ''),
-(1000, 'uñas', 'Manicuría básica con opción de esmaltado común', '1 hora', '7 a 15 días', 700, 'img/mani.png'),
-(1001, 'uñas', 'Manicuría con esmaltado semipermanente (Incluye 2 decoracion', '2 horas', '20 a 40 días', 1000, 'img/semi.png'),
-(1002, 'uñas', 'Capping con gel o acrigel. Incluye 2 decoraciones a elección en total.', '3 horas', '20 a 40 días', 1200, 'img/capping.png'),
-(1003, 'uñas', 'Esculpidas con gel o acrigel.\r\nIncluye 2 decoraciones a elección en total.', '4 horas', '20 a 40 días', 1650, 'img/esculpidas.png'),
-(1004, 'uñas', 'Reparación/reconstrucción de uña rota natural o esculpida', '30 minutos', '20 a 40 días', 200, '\"img/reparacion.png\"'),
-(1005, 'uñas', 'Decoración de uña extra. Glitter, piedras, dibujo, etc.', '30 minutos', '20 a 40 días', 100, '\"img/deco.jpg\"'),
-(1006, 'uñas', 'Remoción sin renovación del servicio.\r\nIncluye manicuría básica.\r\nSemipermanente', '60 minutos', '', 400, '\"img/remocion.jpg\"'),
-(1007, 'uñas', 'Remoción sin renovación del servicio. Incluye manicuría básica. Capping.', '60 minutos', '', 500, '\"img/remocion.jpg\"'),
-(1008, 'uñas', 'Remoción sin renovación del servicio. Incluye manicuría básica. Esculpidas.', '60 minutos', '', 600, '\"img/remocion.jpg\"'),
-(2000, 'uñas', 'Pedicuría básica con opción de esmaltado común', '60 minutos', '15 a 30 días', 1000, '\"img/pedi.jpg\"'),
-(2001, 'uñas', 'Pedicuría con esmaltado semipermanente', '2 horas', '1 a 2 meses', 1200, '\"img/pedi-semi.png\"'),
-(3000, 'pestañas', 'Lifting de pestañas', '30 minutos', '1 a 2 meses', 900, '\"img/lifting.png\"'),
-(3001, 'pestañas', 'Lifting de pestañas + tinte', '60 minutos', '1 a 2 meses', 1000, '\"img/lifting+tinte.png\"'),
-(4000, 'cejas', 'Perfilado y diseño de cejas', '30 minutos', '1 a 2 meses', 750, '\"img/cejas.png\"'),
-(4001, 'cejas', 'Perfilado + tinte de cejas', '60 minutos', '1 a 2 meses', 850, '\"img/cejas-tinte.png\"');
+(1, 'uñas', 'Manicuría básica con opción de esmaltado común', '1 hora', '7 a 15 días', '700.00', '2021144846mani.png'),
+(2, 'uñas', 'Manicuría con esmaltado semipermanente (Incluye 2 decoraciones)', '2 horas', '20 a 40 días', '1000.00', '2021144944semi.jpg'),
+(3, 'uñas', 'Capping con gel o acrigel. Incluye 2 decoraciones a elección en total.', '3 horas', '20 a 40 días', '1200.00', '2021145028capping.jpg'),
+(4, 'uñas', 'Esculpidas con gel o acrigel. Incluye 2 decoraciones a elección en total.', '4 horas', '20 a 40 días', '1650.00', '2021145129esculpidas.jpg'),
+(5, 'uñas', 'Reparación/reconstrucción de uña rota natural o esculpida.', '30 minutos', '20 a 40 días', '200.00', '2021145202reparacion.png'),
+(6, 'uñas', 'Decoración de uña extra. Glitter, piedras, dibujo, etc.', '30 minutos', '20 a 40 días', '100.00', '2021145237deco.jpg'),
+(7, 'uñas', 'Remoción sin renovación del servicio.\\r\\nIncluye manicuría básica.\\r\\nSemipermanente', '60 minutos', '', '400.00', '2021145351remocion.jpg'),
+(8, 'uñas', 'Remoción sin renovación del servicio. Incluye manicuría básica. Capping.', '60 minutos', '', '500.00', '2021145556remocion.jpg'),
+(9, 'uñas', 'Remoción sin renovación del servicio. Incluye manicuría básica. Esculpidas.', '60 minutos', '', '600.00', '2021145629remocion.jpg'),
+(10, 'uñas', 'Pedicuría básica con opción de esmaltado común.', '60 minutos', '15 a 30 días', '1000.00', '2021145704pedi.jpg'),
+(11, 'uñas', 'Pedicuría con esmaltado semipermanente.', '2 horas', '1 a 2 meses', '1200.00', '2021145741pedi-semi.png'),
+(12, 'pestañas', 'Lifting de pestañas', '30 minutos', '1 a 2 meses', '900.00', '2021145827lifting.png'),
+(13, 'pestañas', 'Lifting de pestañas + tinte', '60 minutos', '1 a 2 meses', '1000.00', '2021145859lifting+tinte.png'),
+(14, 'cejas', 'Perfilado y diseño de cejas', '30 minutos', '1 a 2 meses', '750.00', '2021145931cejas.png'),
+(15, 'cejas', 'Perfilado + tinte de cejas', '60 minutos', '1 a 2 meses', '850.00', '2021150007cejas-tinte.png'),
+(16, 'were', 'Trinidad Boragini', '60 minutos', '7 a 15 días', '1200.00', '2021200119logo.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `usuarios`
+--
+
+CREATE TABLE `jazz`.`usuarios` (
+  `id_usuario` int(255) NOT NULL,
+  `username` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
+  `password` varchar(10) COLLATE utf8_spanish_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `jazz`.`usuarios` (`id_usuario`, `username`, `password`) VALUES
+(1, 'admin', 'admin');
 
 --
 -- Índices para tablas volcadas
@@ -68,6 +87,28 @@ INSERT INTO `jazz`.`servicios` (`id`, `spa`, `nombre`, `proceso`, `duracion`, `p
 --
 ALTER TABLE `jazz`.`servicios`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `usuarios`
+--
+ALTER TABLE `jazz`.`usuarios`
+  ADD PRIMARY KEY (`id_usuario`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `servicios`
+--
+ALTER TABLE `jazz`.`servicios`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
+--
+-- AUTO_INCREMENT de la tabla `usuarios`
+--
+ALTER TABLE `jazz`.`usuarios`
+  MODIFY `id_usuario` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

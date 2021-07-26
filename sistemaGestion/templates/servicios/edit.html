@@ -1,49 +1,46 @@
 {% include 'headerGestion.html' %}
-<br>
-<b-card-header>
-    <h2>Modificar servicio</h2>
-</b-card-header>
+
+<div class="ing-servicio">
+    <b-card-header>
+        <h2>Modificar servicio</h2>
+    </b-card-header>
+</div>
 
 {% for servicio in servicios %}
 
-<form method="POST" action="/update" enctype="multipart/form-data">
-    <br>
-    <input type="hidden" name="txtID" id="txtID" value="{{servicio[0]}}">
-    <div class="form-group">
-        <label for="txtSpa">Spa:</label>
-        <input id="txtSpa" class="formcontrol" type="text" name="txtSpa" value="{{servicio[1]}}">
-    </div>
-    <br>
-    <div class="form-group">
-        <label for="txtNombre">Servicio:</label>
-        <input id="txtNombre" class="formcontrol" type="text" name="txtNombre" value="{{servicio[2]}}">
-    </div>
-    <br>
-    <div class="form-group">
-        <label for="txtTiempo">Tiempo:</label>
-        <input id="txtTiempo" class="formcontrol" type="text" name="txtTiempo" value="{{servicio[3]}}">
-    </div>
-    <br>
-    <div class="form-group">
-        <label for="txtDuracion">Duración:</label>
-        <input id="txtDuracion" class="formcontrol" type="text" name="txtDuracion" value="{{servicio[4]}}">
-    </div>
-
-    <br>
-    <div class="form-group">
-        <label for="txtPrecio">Precio:</label>
-        <input id="txtPrecio" class="formcontrol" type="text" name="txtPrecio" value="{{servicio[5]}}">
-    </div>
-    <br>
-    <div class="form-group">
-        <label for="txtFoto">Foto:</label>
-        <img class="img-thumbnail" width="100" src="{{url_for('uploads', nombreFoto=servicio[6])}}" alt="{{servicio[1]}}">
-        <input id="txtFoto" class="formcontrol" type="file" name="txtFoto">
-    </div>
-    <br>
-    <br>
-    <div class="form-group">
-        <input type="submit" class="btn btn-secondary btn-light btn-sm" value="Modificar" onclick="validarFormulario()">
-        <a href="{{url_for('gestion')}}" class="btn btn-secondary btn-light btn-sm">Regresar</a>
-    </div>
-    {% endfor %} {% include 'footer.html' %}
+<div class="form-servicio">
+    <form method="POST" action="/update" enctype="multipart/form-data">
+        <input type="hidden" name="txtID" id="txtID" value="{{servicio[0]}}">
+        <div class="form-group">
+            <label for="txtSpa">Spa:</label>
+            <input id="txtSpa" class="formcontrol" type="text" name="txtSpa" value="{{servicio[1]}}">
+        </div>
+        <div class="form-group">
+            <label for="txtNombre">Servicio:</label>
+            <input id="txtNombre" class="formcontrol" type="text" name="txtNombre" size=50 value="{{servicio[2]}}">
+        </div>
+        <div class="form-group">
+            <label for="txtTiempo">Tiempo:</label>
+            <input id="txtTiempo" class="formcontrol" type="text" name="txtTiempo" value="{{servicio[3]}}">
+        </div>
+        <div class="form-group">
+            <label for="txtDuracion">Duración:</label>
+            <input id="txtDuracion" class="formcontrol" type="text" name="txtDuracion" value="{{servicio[4]}}">
+        </div>
+        <div class="form-group">
+            <label for="txtPrecio">Precio:</label>
+            <input id="txtPrecio" class="formcontrol" type="text" name="txtPrecio" value="{{servicio[5]}}">
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="txtFoto">Foto:</label>
+            <img class="img-thumbnail" width="100" src="{{url_for('uploads', nombreFoto=servicio[6])}}" alt="{{servicio[1]}}">
+            <input id="txtFoto" class="formcontrol" type="file" name="txtFoto">
+        </div>
+        <div class="form-group botones">
+            <input type="submit" class="btn btn-secondary btn-light btn-sm" value="Modificar" onclick="validarFormulario()">
+            <a href="{{url_for('gestion')}}" class="btn btn-secondary btn-light btn-sm">Regresar</a>
+        </div>
+    </form>
+</div>
+{% endfor %} {% include 'footer.html' %}

@@ -1,13 +1,12 @@
 {% include 'header.html' %}
 
-
 <div class="contenedor-faq">
     <h1>Preguntas frecuentes</h1>
 
     <dl>
         <dt>¿Cómo reservo mi turno?</dt>
         <dd>Podés reservar un turno para vos o solicitar un voucher para regalar el servicio a otra persona. Trata de organizarte para reservarlo con tiempo para no quedarte sin tu turno. Se requiere una seña del 50% del servicio para la reserva (abonada
-            con al menos 24hs de anticipación). Lo podes pedir haciendo click <a href="turnos.html">acá</a>. Una vez completado el formulario te enviaremos los detalles de pago.
+            con al menos 24hs de anticipación). Lo podes pedir haciendo click <a href="{{url_for('turnos')}}">acá</a>. Una vez completado el formulario te enviaremos los detalles de pago.
         </dd>
 
         <dt>¿Con cuánta anticipación debo reservar mi turno?</dt>
@@ -24,98 +23,79 @@
         </dd>
 
         <dt>¿Cuánto cuesta cada servicio?</dt>
-        <dd>Podes ver todos los precios actualizados haciendo click en <a href="nails.html">Uñas</a> o <a href="browsandlashes.html">Pestañas</a>.
+        <dd>Podes ver todos los precios actualizados haciendo click en <a href="{{url_for('nails')}}">Uñas</a> o <a href="{{url_for('browsandlashes')}}">Pestañas</a>.
         </dd>
 
         <dt>¿Cuánto demora cada servicio?</dt>
-        <dd>Podes ver todos los detalles de cada servicio haciendo click en <a href="nails.html">Uñas</a> o <a href="browsandlashes.html">Pestañas</a>.
+        <dd>Podes ver todos los detalles de cada servicio haciendo click en <a href="{{url_for('nails')}}">Uñas</a> o <a href="{{url_for('browsandlashes')}}">Pestañas</a>.
         </dd>
 
         <dt>¿Cada cuanto tiempo necesito renovar el servicio?
-            </dt>
+        </dt>
         <dd>Lo ideal es que prestes atención a si el servicio necesita mantenimiento y si es así te contactes para solicitar el turno con anticipación, para evitar el deterioro. La duración varía en cada persona (según la velocidad de crecimiento de uñas
             o vello, rutinas y cuidado de la piel, propiedades químicas/ph que determinan la adherencia de los productos, etc). Todos los organismos son diferentes. Tené en cuenta que el primer servicio de uñas suele tener menor duración, ya que estas
-            vienen con daño acumulado por estar desprotegidas, mejorando con cada servicio. Podés ver el detalle de la duración de cada servicio haciendo click en <a href="nails.html">Uñas</a> o <a href="browsandlashes.html">Pestañas</a>.
+            vienen con daño acumulado por estar desprotegidas, mejorando con cada servicio. Podés ver el detalle de la duración de cada servicio haciendo click en <a href="{{url_for('nails')}}">Uñas</a> o <a href="{{url_for('browsandlashes')}}">Pestañas</a>.
         </dd>
 
         <dt>¿Puedo asistir con acompañante?
-            </dt>
+        </dt>
         <dd>Si, sobretodo de tratarse de alguien menor de edad que requiere de acompañante o con una persona con infantes a su cargo. Pero se solicita asistir sin compañía de ser posible y si no respetar el máximo de un solo acompañante (dado el contexto
             sanitario actual).
         </dd>
 
         <dt>¿Desde que edad puedo realizarme los servicios?
-            </dt>
+        </dt>
         <dd>No hay ninguna restricción, a excepción de personas alérgicas a algún compuesto de los productos a utilizar. Dado el caso puede realizarse una prueba de alergias antes de proceder con el servicio. Se recomienda ser mayor de 10 años ya que los
             tratamientos son muy duraderos y los menores de edad tienden a cambiar sus gustos rápida y repentinamente. Esto puede derivar en que el menor se lastime intentando removerse el tratamiento de manera brusca (ej: morderse las uñas hasta quitar
             todo el esmaltado). Tener en cuenta que los servicios normalmente conllevan varias horas en una misma posición. Estos son todos los aspectos que un mayor debería considerar para contratar el servicio para un menor.
         </dd>
 
         <dt>¿Debo dejar descansar mis uñas?
-            </dt>
+        </dt>
         <dd>Las uñas son células muertas endurecidas que consisten en proteína y queratina. Al igual que el pelo NO RESPIRAN. La única parte viva de las uñas es la matriz (raíz de las uñas debajo de la piel). Y su nutrición de las uñas se produce a través
             de los capilares utilizando aceite para la cutícula. Además también se pueden tomar las vitaminas adecuadas (siempre consultar con profesional en medicina dermatológica).
 
         </dd>
 
         <dt>¿El esmaltado semipermanente debilita las uñas?
-            </dt>
+        </dt>
         <dd>Todo lo contrario, al usar sistemáticamente esmaltado semipermanente, notarás que las uñas crecen más rápido. Debajo del material artificial, las uñas están protegidas de los factores químicos y mecánicos nocivos. Además contribuye a alinear uñas
             no muy rectas , fortalecer uñas frágiles y frenar la descamación de los bordes y quiebres.
         </dd>
 
         <dt>¿Cómo hago para sacarme el esmaltado semipermanente?
-            </dt>
-        <dd>La remoción está incluida en el costo del servicio siempre que se renueve el esmaltado. Sino tiene costo aparte. Podes reservar tu turno haciendo click <a href="turnos.html">acá</a>.</dd>
+        </dt>
+        <dd>La remoción está incluida en el costo del servicio siempre que se renueve el esmaltado. Sino tiene costo aparte. Podes reservar tu turno haciendo click <a href="{{url_for('turnos')}}">acá</a>.</dd>
 
         <dt>¿Cómo retirar el esmaltado semipermanente con removedor?
-            </dt>
+        </dt>
         <dd>1. Usando una lima bloque o la lima 100/180 quitar el brillo (la capa superior) del esmalte semipermanente. 2. Humedecer un trozo de algodón, 1/4 de disco de algodón o un paño sin pelusa (lint free wipe) con removedor. 3. Envolver cada uña con
             el algodón/paño humedecido con un trozo de papel aluminio o con los broches plásticos/de silicona que son específicamente para esto. 4. Después de 20 minutos o cuando esté blando, retirar los restos del esmalte semipermanente con una espátula
             u objeto firme que sirva de espátula (ej: repujador de cuticulas).
         </dd>
 
         <dt>¿Qué hago si se me quiebra una uña?
-            </dt>
-        <dd>Toda rotura puede repararse sin importar la gravedad. Lo importante es que reserves tu turno haciendo click <a href="turnos.html">acá</a> lo antes posible y mientras tanto manejarse con cuidado, vendar el dedo o reforzar provisoriamente con adhesivo
-            simil La Gotita. Puede emparchar o directamente reconstruirse, el costo es el mismo.
+        </dt>
+        <dd>Toda rotura puede repararse sin importar la gravedad. Lo importante es que reserves tu turno haciendo click
+            <a href="{{url_for('turnos')}}">acá</a> lo antes posible y mientras tanto manejarse con cuidado, vendar el dedo o reforzar provisoriamente con adhesivo simil La Gotita. Puede emparchar o directamente reconstruirse, el costo es el mismo.
         </dd>
 
         <dt>¿Para qué hacerme capping?
-            </dt>
+        </dt>
         <dd>El capping es agregar una capa de material entre la uña y el esmalte fortaleciéndola aún más. Por lo tanto es la mejor opción para alinear, corregir uñas torcidas y fortalecer, ideal para quienes trabajan mucho con las manos o tienen uñas finas
             o débiles.
         </dd>
 
-        <!--<dt>¿Qué diferencia hay entre el gel y el acrigel?</dt>
-            <dd></dd>-->
-
         <dt>¿Qué son las “gelificadas”?
-            </dt>
+        </dt>
         <dd>Es una forma poco profesional de referirse a las uñas esculpidas con gel.
         </dd>
 
         <dt>¿Necesito hacerme esculpidas?
-            </dt>
+        </dt>
         <dd>Es ideal para conseguir uñas largas de forma inmediata o para un evento. Pero de poder esperar unos meses se consiguen los mismo resultados con sucesivos esmaltados semipermanentes. Además de llegar a tener uñas largas naturales y sanas, el semipermanente
             es un servicio más económico y rápido de realizar que las esculpidas. Cuando se aplica correctamente, el esmaltado semipermanente dura de 2.5 a 4 semanas. Con el cuidado adecuado de las manos, se puede tener uñas prolijas y hermosas.
         </dd>
-
-        <!--<dt>¿Puedo hacerme esculpidas si tengo las uñas mordidas?
-            </dt>
-            <dd></dd>
-
-            <dt>Se me encarnan las uñas de los pies
-            </dt>
-            <dd></dd>
-
-            <dt>Mis cejas casi no se ven
-            </dt>
-            <dd></dd>
-
-            <dt>Mis pestañas no se ven
-            </dt>
-            <dd></dd>-->
 
     </dl>
 </div>

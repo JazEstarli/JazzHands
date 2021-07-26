@@ -31,7 +31,6 @@
             <label for="txtPrecio">Precio:</label>
             <input id="txtPrecio" class="formcontrol" type="text" name="txtPrecio" value="{{servicio[5]}}">
         </div>
-        <br>
         <div class="form-group">
             <label for="txtFoto">Foto:</label>
             <img class="img-thumbnail" width="100" src="{{url_for('uploads', nombreFoto=servicio[6])}}" alt="{{servicio[1]}}">
@@ -43,4 +42,5 @@
         </div>
     </form>
 </div>
+
 {% endfor %} {% include 'footer.html' %}

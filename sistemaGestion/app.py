@@ -27,7 +27,7 @@ def index():
 
 
 @app.route('/nails')
-def services_nails():
+def nails():
     '''Se muestran en la página todos aquellos servicios cargados en la base de datos, cuyo spa sea "uñas"'''
     sql = "SELECT * FROM `jazz` . `servicios` WHERE spa = 'uñas';"
     conn = mysql.connect()
@@ -39,7 +39,7 @@ def services_nails():
 
 
 @app.route('/browsandlashes')
-def services_browsandlashes():
+def browsandlashes():
     '''Se muestran en la página todos aquellos servicios cargados en la base de datos, cuyo spa sea "cejas" o "pestañas'''
     sql = "SELECT * FROM `jazz` . `servicios` WHERE spa = 'cejas' OR spa = 'pestañas';"
     conn = mysql.connect()
@@ -76,6 +76,7 @@ def gestion():
 
 @app.route('/create')
 def create():
+    '''Desde acá se ingresan servicios nuevos'''
     return render_template('servicios/create.html')
 
 
@@ -89,9 +90,6 @@ def storage():
     _precio = request.form['txtPrecio']
     _foto = request.files['txtFoto']
 
-    # Validación de los datos traídos del formulario
-    #if _spa == '' or _spa.isspace() == True or _spa.isdigit() == True or _spa.isalpha() == False:
-     #   return redirect('/create')
     if _nombre == '' or _nombre.isspace() == True:
         return redirect('/create')
     if _tiempo == '' or _tiempo.isspace() == True:
@@ -207,8 +205,8 @@ def update():
 
 @app.route('/uploads/<nombreFoto>')
 def uploads(nombreFoto):
-     '''Se muestra en el html la foto asociada al servicio'''
-     return send_from_directory(app.config['CARPETA'], nombreFoto)
+    '''Se muestra en el html la foto asociada al servicio'''
+    return send_from_directory(app.config['CARPETA'], nombreFoto)
 
 
 if __name__ == '__main__':

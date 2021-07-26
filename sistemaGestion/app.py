@@ -29,7 +29,7 @@ def index():
 @app.route('/nails')
 def nails():
     '''Se muestran en la página todos aquellos servicios cargados en la base de datos, cuyo spa sea "uñas"'''
-    sql = "SELECT * FROM `jazz` . `servicios` WHERE spa = 'uñas';"
+    sql = "SELECT * FROM `heroku_8a079106560b065` . `servicios` WHERE spa = 'uñas';"
     conn = mysql.connect()
     cursor = conn.cursor()
     cursor.execute(sql)
@@ -41,7 +41,7 @@ def nails():
 @app.route('/browsandlashes')
 def browsandlashes():
     '''Se muestran en la página todos aquellos servicios cargados en la base de datos, cuyo spa sea "cejas" o "pestañas'''
-    sql = "SELECT * FROM `jazz` . `servicios` WHERE spa = 'cejas' OR spa = 'pestañas';"
+    sql = "SELECT * FROM `heroku_8a079106560b065` . `servicios` WHERE spa = 'cejas' OR spa = 'pestañas';"
     conn = mysql.connect()
     cursor = conn.cursor()
     cursor.execute(sql)
@@ -65,7 +65,7 @@ def faq():
 @app.route('/gestion', methods=['POST', 'GET'])
 def gestion():
     '''Desde acá se listan los servicios actuales y se pueden crear y editar servicios'''
-    sql = "SELECT * FROM `jazz` . `servicios`;"
+    sql = "SELECT * FROM `heroku_8a079106560b065` . `servicios`;"
     conn = mysql.connect()
     cursor = conn.cursor()
     cursor.execute(sql)
@@ -105,7 +105,7 @@ def storage():
         nuevoNombreFoto = tiempo + _foto.filename
         _foto.save("uploads/" + nuevoNombreFoto)
 
-        sql = "INSERT INTO `jazz`.`servicios` (`id`,`spa`,`nombre`,`proceso`,`duracion`,`precio`,`foto`) VALUES (NULL,%s,%s,%s,%s,%s,%s)"
+        sql = "INSERT INTO `heroku_8a079106560b065`.`servicios` (`id`,`spa`,`nombre`,`proceso`,`duracion`,`precio`,`foto`) VALUES (NULL,%s,%s,%s,%s,%s,%s)"
         datos = (_spa, _nombre, _tiempo, _duracion, _precio, nuevoNombreFoto)
         conn = mysql.connect()
         cursor = conn.cursor()
@@ -127,7 +127,7 @@ def login():
         datos = (_username, _password)
         conn = mysql.connect()
         cursor = conn.cursor()
-        sql = "SELECT * FROM `jazz`.`usuarios` WHERE `username` =%s AND `password`=%s;"
+        sql = "SELECT * FROM `heroku_8a079106560b065`.`usuarios` WHERE `username` =%s AND `password`=%s;"
         cursor.execute(sql, datos)
         users = cursor.fetchall()
         username = users[0][1]
@@ -146,9 +146,9 @@ def destroy(identificador):
     datos = identificador
     conn = mysql.connect()
     cursor = conn.cursor()
-    sql = "DELETE FROM `jazz` . `servicios` WHERE `id` =%s;"
+    sql = "DELETE FROM `heroku_8a079106560b065` . `servicios` WHERE `id` =%s;"
 
-    cursor.execute("SELECT foto FROM `jazz` . `servicios` WHERE id=%s", datos)
+    cursor.execute("SELECT foto FROM `heroku_8a079106560b065` . `servicios` WHERE id=%s", datos)
     fila = cursor.fetchall()
     os.remove(os.path.join(app.config['CARPETA'], fila[0][0]))
 
@@ -159,7 +159,7 @@ def destroy(identificador):
 
 @app.route('/edit/<int:id>')
 def edit(id):
-    sql = "SELECT * FROM `jazz` . `servicios` WHERE `id` =%s;"
+    sql = "SELECT * FROM `heroku_8a079106560b065` . `servicios` WHERE `id` =%s;"
     conn = mysql.connect()
     cursor = conn.cursor()
     cursor.execute(sql, (id))
@@ -179,7 +179,7 @@ def update():
     _foto = request.files['txtFoto']
     id = request.form['txtID']
 
-    sql = "UPDATE `jazz`.`servicios` SET `spa`=%s, `nombre`=%s, `proceso`=%s, `duracion`=%s, `precio`=%s WHERE `id`=%s;"
+    sql = "UPDATE `heroku_8a079106560b065`.`servicios` SET `spa`=%s, `nombre`=%s, `proceso`=%s, `duracion`=%s, `precio`=%s WHERE `id`=%s;"
     datos = (_spa, _nombre, _tiempo, _duracion, _precio, id)
 
     conn = mysql.connect()
@@ -192,10 +192,10 @@ def update():
         nuevoNombreFoto = tiempo + _foto.filename
         _foto.save("uploads/" + nuevoNombreFoto)
 
-        cursor.execute("SELECT foto FROM `jazz` . `servicios` WHERE id=%s", datos)
+        cursor.execute("SELECT foto FROM `heroku_8a079106560b065` . `servicios` WHERE id=%s", datos)
         fila = cursor.fetchall()
         os.remove(os.path.join(app.config['CARPETA'], fila[0][0]))
-        cursor.execute("UPDATE `jazz`.`servicios` SET `foto`=%s WHERE id=%s;", (nuevoNombreFoto, id))
+        cursor.execute("UPDATE `heroku_8a079106560b065`.`servicios` SET `foto`=%s WHERE id=%s;", (nuevoNombreFoto, id))
         conn.commit()
 
     cursor.execute(sql, datos)

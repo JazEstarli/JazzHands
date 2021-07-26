@@ -13,10 +13,10 @@ mysql = MySQL()
 CARPETA = os.path.join('uploads')
 app.config['CARPETA'] = CARPETA
 
-app.config['MYSQL_DATABASE_HOST'] = 'localhost'
-app.config['MYSQL_DATABASE_USER'] = 'root'
-app.config['MYSQL_DATABASE_PASSWORD'] = ''
-app.config['MYSQL_DATABASE_Db'] = 'jazz'
+app.config['MYSQL_DATABASE_HOST'] = 'us-cdbr-east-04.cleardb.com'
+app.config['MYSQL_DATABASE_USER'] = 'ba69f91b5bbe8a'
+app.config['MYSQL_DATABASE_PASSWORD'] = 'ec3a01d0'
+app.config['MYSQL_DATABASE_Db'] = 'heroku_8a079106560b065'
 mysql.init_app(app)
 
 

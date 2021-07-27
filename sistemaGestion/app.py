@@ -194,7 +194,7 @@ def update():
         nuevoNombreFoto = tiempo + _foto.filename
         _foto.save("uploads/" + nuevoNombreFoto)
 
-        cursor.execute("SELECT foto FROM `heroku_8a079106560b065` . `servicios` WHERE id=%s", datos)
+        cursor.execute("SELECT foto FROM `heroku_8a079106560b065` . `servicios` WHERE id=%s", id)
         fila = cursor.fetchall()
         os.remove(os.path.join(app.config['CARPETA'], fila[0][0]))
         cursor.execute("UPDATE `heroku_8a079106560b065`.`servicios` SET `foto`=%s WHERE id=%s;", (nuevoNombreFoto, id))

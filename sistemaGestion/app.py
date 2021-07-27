@@ -96,6 +96,8 @@ def storage():
         return redirect('/create')
     if len(_precio) == 0 or _precio.isdigit() == False:
         return redirect('/create')
+    if _foto.filename == '':
+        return redirect('/create')
 
     now = datetime.now()
     tiempo = now.strftime("%Y%H%M%S")

@@ -10,9 +10,9 @@
     <form method="POST" action="/store" enctype="multipart/form-data">
         <div class="form-group">
             <label for="txtSpa">Spa:</label>
-            <input id="txtSpa" class="formcontrol" type="radio" name="txtSpa" value="uñas"> Uñas
-            <input id="txtSpa" class="formcontrol" type="radio" name="txtSpa" value="pestañas"> Pestañas
-            <input id="txtSpa" class="formcontrol" type="radio" name="txtSpa" value="cejas"> Cejas
+            <input id="txtSpa" class="formcontrol" type="radio" name="txtSpa" value="uñas" required> Uñas
+            <input id="txtSpa" class="formcontrol" type="radio" name="txtSpa" value="pestañas" required> Pestañas
+            <input id="txtSpa" class="formcontrol" type="radio" name="txtSpa" value="cejas" required> Cejas
         </div>
 
         <div class="form-group">
@@ -38,7 +38,7 @@
 
         <div class="form-group">
             <label for="txtFoto">Foto:</label>
-            <input id="txtFoto" class="formcontrol" type="file" name="txtFoto">
+            <input id="txtFoto" class="formcontrol" type="file" name="txtFoto" required>
         </div>
 
         <div class="form-group botones">

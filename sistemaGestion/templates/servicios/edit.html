@@ -34,7 +34,7 @@
         <div class="form-group">
             <label for="txtFoto">Foto:</label>
             <img class="img-thumbnail" width="100" src="{{url_for('uploads', nombreFoto=servicio[6])}}" alt="{{servicio[1]}}">
-            <input id="txtFoto" class="formcontrol" type="file" name="txtFoto">
+            <input id="txtFoto" class="formcontrol" type="file" name="txtFoto" required>
         </div>
         <div class="form-group botones">
             <input type="submit" class="btn btn-secondary btn-light btn-sm" value="Modificar" onclick="validarFormulario()">
